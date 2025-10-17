@@ -1,12 +1,30 @@
 import { useState } from 'react';
 
-function ToLower() {
+function CleanNumbers() {
     const [inputText, setInputText] = useState<string>('');
     const [outputText, setOutputText] = useState<string>('');
     const [copied, setCopied] = useState<boolean>(false);
 
     const handleConvert = () => {
-        setOutputText(inputText.toLowerCase());
+        const lines = inputText.split(/\r?\n/);
+        const processed = lines.map((line) => {
+            let cpf = line.replace(/\D+/g, '');
+            if (cpf.length < 11) {
+                cpf = cpf.padStart(11, '0');
+            }
+            if (cpf.length === 11) {
+                cpf =
+                    cpf.substring(0, 3) +
+                    '.' +
+                    cpf.substring(3, 6) +
+                    '.' +
+                    cpf.substring(6, 9) +
+                    '-' +
+                    cpf.substring(9, 11);
+            }
+            return cpf;
+        });
+        setOutputText(processed.join('\n'));
     };
 
     const handleClear = () => {
@@ -26,7 +44,7 @@ function ToLower() {
 
     return (
         <>
-            <h1 className="mb-3">UPPERCASE to lowercase</h1>
+            <h1 className="mb-3">Limpar CPF</h1>
             <div className="card p-3 bg-dark text-light border-secondary">
                 <textarea
                     className="form-control bg-dark text-light border-secondary"
@@ -38,7 +56,7 @@ function ToLower() {
                 />
                 <div className="mt-3 d-flex gap-2">
                     <button className="btn btn-primary" onClick={handleConvert}>
-                        Convert to lowercase
+                        Clean non-digits
                     </button>
                     <button className="btn btn-secondary" onClick={handleClear}>
                         Clear
@@ -64,4 +82,4 @@ function ToLower() {
     );
 }
 
-export default ToLower;
+export default CleanNumbers;

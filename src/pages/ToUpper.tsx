@@ -26,29 +26,37 @@ function ToUpper() {
 
     return (
         <>
-            <h1>Lowercase to Uppercase</h1>
-            <div className="card">
+            <h1 className="mb-3">lowercase to UPPERCASE</h1>
+            <div className="card p-3 bg-dark text-light border-secondary">
                 <textarea
+                    className="form-control bg-dark text-light border-secondary"
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                     rows={8}
                     style={{ width: '100%', resize: 'vertical' }}
                     placeholder="Type or paste text here..."
                 />
-                <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
-                    <button onClick={handleConvert}>
+                <div className="mt-3 d-flex gap-2">
+                    <button className="btn btn-primary" onClick={handleConvert}>
                         Convert to UPPERCASE
                     </button>
-                    <button onClick={handleClear}>Clear</button>
-                    <button onClick={handleCopy} disabled={!outputText}>
+                    <button className="btn btn-secondary" onClick={handleClear}>
+                        Clear
+                    </button>
+                    <button
+                        className="btn btn-outline-success"
+                        onClick={handleCopy}
+                        disabled={!outputText}
+                    >
                         {copied ? 'Copied!' : 'Copy result'}
                     </button>
                 </div>
                 <textarea
+                    className="form-control bg-dark text-light border-secondary mt-3"
                     value={outputText}
                     readOnly
                     rows={8}
-                    style={{ width: '100%', resize: 'vertical', marginTop: 12 }}
+                    style={{ width: '100%', resize: 'vertical' }}
                     placeholder="Converted text will appear here..."
                 />
             </div>
