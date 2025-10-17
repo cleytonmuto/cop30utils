@@ -19,6 +19,9 @@ function App() {
                         <Link className="nav-link" to="/clean-numbers">
                             Limpar CPF
                         </Link>
+                        <Link className="nav-link" to="/validate-cpf">
+                            Validar CPF
+                        </Link>
                     </div>
                 </div>
             </nav>

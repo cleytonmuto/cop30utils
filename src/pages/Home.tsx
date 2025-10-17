@@ -22,6 +22,9 @@ function Home() {
                 <li>
                     <Link to="/clean-numbers">Limpar CPF</Link>
                 </li>
+                <li>
+                    <Link to="/validate-cpf">Validar CPF</Link>
+                </li>
             </ul>
         </div>
     );
