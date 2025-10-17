@@ -54,7 +54,7 @@ function CleanNumbers() {
                     style={{ width: '100%', resize: 'vertical' }}
                     placeholder="Type or paste text here..."
                 />
-                <div className="mt-3 d-flex gap-2">
+                <div className="mt-3 d-flex flex-wrap gap-2">
                     <button className="btn btn-primary" onClick={handleConvert}>
                         Clean non-digits
                     </button>
