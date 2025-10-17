@@ -9,6 +9,7 @@ import ToUpper from './pages/ToUpper';
 import ToLower from './pages/ToLower';
 import CleanNumbers from './pages/CleanNumbers';
 import ValidateCpf from './pages/ValidateCpf';
+import NormalizeName from './pages/NormalizeName';
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
             { path: 'to-lower', element: <ToLower /> },
             { path: 'clean-numbers', element: <CleanNumbers /> },
             { path: 'validate-cpf', element: <ValidateCpf /> },
+            { path: 'normalize-name', element: <NormalizeName /> },
         ],
     },
 ]);

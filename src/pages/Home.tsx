@@ -25,6 +25,9 @@ function Home() {
                 <li>
                     <Link to="/validate-cpf">Validar CPF</Link>
                 </li>
+                <li>
+                    <Link to="/normalize-name">Normalizar Nome</Link>
+                </li>
             </ul>
         </div>
     );

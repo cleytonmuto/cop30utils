@@ -22,6 +22,9 @@ function App() {
                         <Link className="nav-link" to="/validate-cpf">
                             Validar CPF
                         </Link>
+                        <Link className="nav-link" to="/normalize-name">
+                            Normalizar Nome
+                        </Link>
                     </div>
                 </div>
             </nav>
