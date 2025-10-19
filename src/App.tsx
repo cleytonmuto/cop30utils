@@ -37,6 +37,9 @@ function App() {
                             <Link className="nav-link" to="/normalize-name">
                                 Normalizar Nome
                             </Link>
+                            <Link className="nav-link" to="/gender-detection">
+                                Detectar Gênero
+                            </Link>
                         </div>
                     </div>
                 </div>

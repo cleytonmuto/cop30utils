@@ -11,6 +11,7 @@ import ToLower from './pages/ToLower';
 import CleanNumbers from './pages/CleanNumbers';
 import ValidateCpf from './pages/ValidateCpf';
 import NormalizeName from './pages/NormalizeName';
+import GenderDetection from './pages/GenderDetection';
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
             { path: 'clean-numbers', element: <CleanNumbers /> },
             { path: 'validate-cpf', element: <ValidateCpf /> },
             { path: 'normalize-name', element: <NormalizeName /> },
+            { path: 'gender-detection', element: <GenderDetection /> },
         ],
     },
 ]);

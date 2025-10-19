@@ -28,6 +28,9 @@ function Home() {
                 <li>
                     <Link to="/normalize-name">Normalizar Nome</Link>
                 </li>
+                <li>
+                    <Link to="/gender-detection">Detectar Gênero</Link>
+                </li>
             </ul>
         </div>
     );
