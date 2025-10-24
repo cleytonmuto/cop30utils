@@ -40,6 +40,9 @@ function App() {
                             <Link className="nav-link" to="/gender-detection">
                                 Detectar Gênero
                             </Link>
+                            <Link className="nav-link" to="/split-names">
+                                Separar Nomes
+                            </Link>
                         </div>
                     </div>
                 </div>

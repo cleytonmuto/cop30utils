@@ -12,6 +12,7 @@ import CleanNumbers from './pages/CleanNumbers';
 import ValidateCpf from './pages/ValidateCpf';
 import NormalizeName from './pages/NormalizeName';
 import GenderDetection from './pages/GenderDetection';
+import SplitNames from './pages/SplitNames';
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
             { path: 'validate-cpf', element: <ValidateCpf /> },
             { path: 'normalize-name', element: <NormalizeName /> },
             { path: 'gender-detection', element: <GenderDetection /> },
+            { path: 'split-names', element: <SplitNames /> },
         ],
     },
 ]);

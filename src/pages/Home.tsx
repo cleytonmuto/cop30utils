@@ -31,6 +31,9 @@ function Home() {
                 <li>
                     <Link to="/gender-detection">Detectar Gênero</Link>
                 </li>
+                <li>
+                    <Link to="/split-names">Separar Nomes</Link>
+                </li>
             </ul>
         </div>
     );
