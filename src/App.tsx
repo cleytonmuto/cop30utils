@@ -43,6 +43,9 @@ function App() {
                             <Link className="nav-link" to="/split-names">
                                 Separar Nomes
                             </Link>
+                            <Link className="nav-link" to="/detect-repeats">
+                                Detectar Repetições
+                            </Link>
                         </div>
                     </div>
                 </div>

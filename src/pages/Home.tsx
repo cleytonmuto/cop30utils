@@ -34,6 +34,9 @@ function Home() {
                 <li>
                     <Link to="/split-names">Separar Nomes</Link>
                 </li>
+                <li>
+                    <Link to="/detect-repeats">Detectar Repetições</Link>
+                </li>
             </ul>
         </div>
     );
