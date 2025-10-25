@@ -49,6 +49,9 @@ function App() {
                             <Link className="nav-link" to="/format-phone">
                                 Formatar Telefone
                             </Link>
+                            <Link className="nav-link" to="/validate-email">
+                                Validar E-mail
+                            </Link>
                         </div>
                     </div>
                 </div>

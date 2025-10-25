@@ -15,6 +15,7 @@ import GenderDetection from './pages/GenderDetection';
 import SplitNames from './pages/SplitNames';
 import DetectRepeats from './pages/DetectRepeats';
 import FormatPhone from './pages/FormatPhone';
+import ValidateEmail from './pages/ValidateEmail';
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
             { path: 'split-names', element: <SplitNames /> },
             { path: 'detect-repeats', element: <DetectRepeats /> },
             { path: 'format-phone', element: <FormatPhone /> },
+            { path: 'validate-email', element: <ValidateEmail /> },
         ],
     },
 ]);

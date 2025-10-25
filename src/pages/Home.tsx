@@ -40,6 +40,9 @@ function Home() {
                 <li>
                     <Link to="/format-phone">Formatar Telefone</Link>
                 </li>
+                <li>
+                    <Link to="/validate-email">Validar E-mail</Link>
+                </li>
             </ul>
         </div>
     );
