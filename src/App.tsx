@@ -52,6 +52,9 @@ function App() {
                             <Link className="nav-link" to="/validate-email">
                                 Validar E-mail
                             </Link>
+                            <Link className="nav-link" to="/about">
+                                Sobre
+                            </Link>
                         </div>
                     </div>
                 </div>
