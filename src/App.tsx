@@ -46,6 +46,9 @@ function App() {
                             <Link className="nav-link" to="/detect-repeats">
                                 Detectar Repetições
                             </Link>
+                            <Link className="nav-link" to="/format-phone">
+                                Formatar Telefone
+                            </Link>
                         </div>
                     </div>
                 </div>

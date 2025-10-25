@@ -14,6 +14,7 @@ import NormalizeName from './pages/NormalizeName';
 import GenderDetection from './pages/GenderDetection';
 import SplitNames from './pages/SplitNames';
 import DetectRepeats from './pages/DetectRepeats';
+import FormatPhone from './pages/FormatPhone';
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
             { path: 'gender-detection', element: <GenderDetection /> },
             { path: 'split-names', element: <SplitNames /> },
             { path: 'detect-repeats', element: <DetectRepeats /> },
+            { path: 'format-phone', element: <FormatPhone /> },
         ],
     },
 ]);

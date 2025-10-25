@@ -37,6 +37,9 @@ function Home() {
                 <li>
                     <Link to="/detect-repeats">Detectar Repetições</Link>
                 </li>
+                <li>
+                    <Link to="/format-phone">Formatar Telefone</Link>
+                </li>
             </ul>
         </div>
     );
