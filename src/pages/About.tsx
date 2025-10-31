@@ -1,5 +1,6 @@
 import team1 from '../assets/team1.png';
 import team2 from '../assets/team2.png';
+import earth from '../assets/earth.png';
 
 function About() {
     return (
@@ -66,7 +67,25 @@ function About() {
                                     </div>
                                 </div>
 
-                                
+                                <div className="row g-4 mb-4">
+                                    <div className="col-12">
+                                        <div className="card bg-secondary border-primary">
+                                            <div className="card-body text-center p-3">
+                                                <img 
+                                                    src={earth} 
+                                                    alt="Earth" 
+                                                    className="img-fluid rounded mb-3"
+                                                    style={{ 
+                                                        maxHeight: '300px', 
+                                                        objectFit: 'cover',
+                                                        width: '100%',
+                                                        border: '2px solid #0d6efd'
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div className="row mt-4">
                                     <div className="col-12">
