@@ -47,6 +47,15 @@ function Home() {
                     <Link to="/compare-lists">Comparar Listas</Link>
                 </li>
                 <li>
+                    <Link to="/remove-duplicates">Remover Duplicatas</Link>
+                </li>
+                <li>
+                    <Link to="/sort-names">Ordenar Nomes</Link>
+                </li>
+                <li>
+                    <Link to="/sort-names-desc">Ordenar Nomes (Decrescente)</Link>
+                </li>
+                <li>
                     <Link to="/about">Sobre</Link>
                 </li>
             </ul>

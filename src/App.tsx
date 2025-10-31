@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 function App() {
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-dark navbar-dark mb-3 p-2 rounded-3">
+            <nav className="navbar navbar-expand-xl bg-dark navbar-dark mb-3 p-2 rounded-3">
                 <div className="container-fluid gap-2">
                     <Link className="navbar-brand" to="/">
                         COP30 Utils
@@ -21,39 +21,48 @@ function App() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navContent">
-                        <div className="navbar-nav ms-auto gap-2">
+                        <div className="navbar-nav ms-auto gap-1" style={{ fontSize: '0.9rem' }}>
                             <Link className="nav-link" to="/to-upper">
-                                TO UPPER
+                                UPPER
                             </Link>
                             <Link className="nav-link" to="/to-lower">
-                                to lower
+                                lower
                             </Link>
                             <Link className="nav-link" to="/clean-numbers">
-                                Limpar CPF
+                                CPF
                             </Link>
                             <Link className="nav-link" to="/validate-cpf">
-                                Validar CPF
+                                Valid CPF
                             </Link>
                             <Link className="nav-link" to="/normalize-name">
-                                Normalizar Nome
+                                Nome
                             </Link>
                             <Link className="nav-link" to="/gender-detection">
-                                Detectar Gênero
+                                Gênero
                             </Link>
                             <Link className="nav-link" to="/split-names">
-                                Separar Nomes
+                                Split
                             </Link>
                             <Link className="nav-link" to="/detect-repeats">
-                                Detectar Repetições
+                                Repetidos
                             </Link>
                             <Link className="nav-link" to="/format-phone">
-                                Formatar Telefone
+                                Fone
                             </Link>
                             <Link className="nav-link" to="/validate-email">
-                                Validar E-mail
+                                Email
                             </Link>
                             <Link className="nav-link" to="/compare-lists">
-                                Comparar Listas
+                                Comparar
+                            </Link>
+                            <Link className="nav-link" to="/remove-duplicates">
+                                Duplicatas
+                            </Link>
+                            <Link className="nav-link" to="/sort-names">
+                                Ord ↑
+                            </Link>
+                            <Link className="nav-link" to="/sort-names-desc">
+                                Ord ↓
                             </Link>
                             <Link className="nav-link" to="/about">
                                 Sobre
