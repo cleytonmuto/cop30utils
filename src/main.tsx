@@ -16,6 +16,7 @@ import SplitNames from './pages/SplitNames';
 import DetectRepeats from './pages/DetectRepeats';
 import FormatPhone from './pages/FormatPhone';
 import ValidateEmail from './pages/ValidateEmail';
+import CompareLists from './pages/CompareLists';
 import About from './pages/About';
 
 const router = createBrowserRouter([
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
             { path: 'detect-repeats', element: <DetectRepeats /> },
             { path: 'format-phone', element: <FormatPhone /> },
             { path: 'validate-email', element: <ValidateEmail /> },
+            { path: 'compare-lists', element: <CompareLists /> },
             { path: 'about', element: <About /> },
         ],
     },

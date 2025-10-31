@@ -44,6 +44,9 @@ function Home() {
                     <Link to="/validate-email">Validar E-mail</Link>
                 </li>
                 <li>
+                    <Link to="/compare-lists">Comparar Listas</Link>
+                </li>
+                <li>
                     <Link to="/about">Sobre</Link>
                 </li>
             </ul>
