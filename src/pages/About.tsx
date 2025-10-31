@@ -82,6 +82,10 @@ function About() {
                                                         border: '2px solid #0d6efd'
                                                     }}
                                                 />
+                                                <h5 className="card-title text-light">Hangar</h5>
+                                                <p className="card-text text-light-50">
+                                                    Centro de Convenções da Amazônia - Belém/PA - Brasil
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
