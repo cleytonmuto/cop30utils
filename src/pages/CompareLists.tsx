@@ -103,8 +103,7 @@ function CompareLists() {
                 <div className="alert alert-info mb-3">
                     <small>
                         <strong>Instruções:</strong> Cole duas listas de elementos, um por linha. 
-                        O sistema mostrará: (1) elementos da Lista 2 que não estão na Lista 1, 
-                        (2) elementos da Lista 1 que não estão na Lista 2, e (3) elementos comuns a ambas as listas.
+                        O sistema mostrará: (1) elementos da Lista 1 que não estão na Lista 2, (2) elementos comuns a ambas as listas, e (3) elementos da Lista 2 que não estão na Lista 1.
                     </small>
                 </div>
                 
