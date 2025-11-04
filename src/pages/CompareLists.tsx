@@ -78,14 +78,14 @@ function CompareLists() {
 
     const handleCopy = async () => {
         const combinedResult = [
-            '=== Elementos da Lista 2 que NÃO estão na Lista 1 ===',
-            outputNotInList1,
-            '',
             '=== Elementos da Lista 1 que NÃO estão na Lista 2 ===',
             outputNotInList2,
             '',
             '=== Elementos Comuns (presentes em ambas as listas) ===',
-            outputCommon
+            outputCommon,
+            '',
+            '=== Elementos da Lista 2 que NÃO estão na Lista 1 ===',
+            outputNotInList1
         ].join('\n');
         
         if (!combinedResult) return;
