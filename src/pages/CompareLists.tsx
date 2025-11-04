@@ -1,6 +1,12 @@
 import { useState } from 'react';
 
-function compareLists(list1: string, list2: string): string[] {
+interface CompareResult {
+    notInList2: string[];
+    notInList1: string[];
+    common: string[];
+}
+
+function compareLists(list1: string, list2: string): CompareResult {
     // Split both lists into arrays of lines and trim whitespace
     const lines1 = list1
         .split(/\r?\n/)
@@ -12,43 +18,79 @@ function compareLists(list1: string, list2: string): string[] {
         .map((line) => line.trim())
         .filter((line) => line.length > 0);
     
-    // Convert first list to a Set for O(1) lookup
+    // Convert lists to Sets for O(1) lookup
     const set1 = new Set(lines1);
+    const set2 = new Set(lines2);
+    
+    // Find elements in list1 that are NOT in list2
+    const notInList2 = lines1.filter((line) => !set2.has(line));
     
     // Find elements in list2 that are NOT in list1
     const notInList1 = lines2.filter((line) => !set1.has(line));
     
-    return notInList1;
+    // Find common elements
+    const common = lines1.filter((line) => set2.has(line));
+    
+    return { notInList2, notInList1, common };
 }
 
 function CompareLists() {
     const [list1, setList1] = useState<string>('');
     const [list2, setList2] = useState<string>('');
-    const [outputText, setOutputText] = useState<string>('');
+    const [outputNotInList1, setOutputNotInList1] = useState<string>('');
+    const [outputNotInList2, setOutputNotInList2] = useState<string>('');
+    const [outputCommon, setOutputCommon] = useState<string>('');
     const [copied, setCopied] = useState<boolean>(false);
 
     const handleCompare = () => {
-        const notInList1 = compareLists(list1, list2);
+        const result = compareLists(list1, list2);
         
-        if (notInList1.length === 0) {
-            setOutputText('Todos os elementos da Lista 2 estão presentes na Lista 1.');
-            return;
-        }
+        // Set output for elements in List 2 that are NOT in List 1
+        setOutputNotInList1(
+            result.notInList1.length > 0
+                ? result.notInList1.join('\n')
+                : '(Nenhum)'
+        );
         
-        setOutputText(notInList1.join('\n'));
+        // Set output for elements in List 1 that are NOT in List 2
+        setOutputNotInList2(
+            result.notInList2.length > 0
+                ? result.notInList2.join('\n')
+                : '(Nenhum)'
+        );
+        
+        // Set output for common elements
+        setOutputCommon(
+            result.common.length > 0
+                ? result.common.join('\n')
+                : '(Nenhum)'
+        );
     };
 
     const handleClear = () => {
         setList1('');
         setList2('');
-        setOutputText('');
+        setOutputNotInList1('');
+        setOutputNotInList2('');
+        setOutputCommon('');
         setCopied(false);
     };
 
     const handleCopy = async () => {
-        if (!outputText) return;
+        const combinedResult = [
+            '=== Elementos da Lista 2 que NÃO estão na Lista 1 ===',
+            outputNotInList1,
+            '',
+            '=== Elementos da Lista 1 que NÃO estão na Lista 2 ===',
+            outputNotInList2,
+            '',
+            '=== Elementos Comuns (presentes em ambas as listas) ===',
+            outputCommon
+        ].join('\n');
+        
+        if (!combinedResult) return;
         try {
-            await navigator.clipboard.writeText(outputText);
+            await navigator.clipboard.writeText(combinedResult);
             setCopied(true);
             setTimeout(() => setCopied(false), 1500);
         } catch {}
@@ -61,7 +103,8 @@ function CompareLists() {
                 <div className="alert alert-info mb-3">
                     <small>
                         <strong>Instruções:</strong> Cole duas listas de elementos, um por linha. 
-                        O sistema encontrará e exibirá os elementos da Lista 2 que NÃO estão na Lista 1.
+                        O sistema mostrará: (1) elementos da Lista 2 que não estão na Lista 1, 
+                        (2) elementos da Lista 1 que não estão na Lista 2, e (3) elementos comuns a ambas as listas.
                     </small>
                 </div>
                 
@@ -109,23 +152,53 @@ function CompareLists() {
                     <button
                         className="btn btn-outline-success"
                         onClick={handleCopy}
-                        disabled={!outputText}
+                        disabled={!outputNotInList1 && !outputNotInList2 && !outputCommon}
                     >
-                        {copied ? 'Copiado!' : 'Copiar resultado'}
+                        {copied ? 'Copiado!' : 'Copiar todos os resultados'}
                     </button>
                 </div>
 
-                <label className="form-label mt-3">
-                    <strong>Elementos da Lista 2 que não estão na Lista 1:</strong>
-                </label>
-                <textarea
-                    className="form-control bg-dark text-light border-secondary"
-                    value={outputText}
-                    readOnly
-                    rows={10}
-                    style={{ width: '100%', resize: 'vertical' }}
-                    placeholder="Os elementos da Lista 2 que não estão na Lista 1 aparecerão aqui..."
-                />
+                <div className="row g-3 mt-3">
+                    <div className="col-md-4">
+                        <label className="form-label">
+                            <strong>Elementos da Lista 1 que NÃO estão na Lista 2:</strong>
+                        </label>
+                        <textarea
+                            className="form-control bg-dark text-light border-secondary"
+                            value={outputNotInList2}
+                            readOnly
+                            rows={10}
+                            style={{ width: '100%', resize: 'vertical' }}
+                            placeholder="Elementos exclusivos da Lista 1 aparecerão aqui..."
+                        />
+                    </div>
+                    <div className="col-md-4">
+                        <label className="form-label">
+                            <strong>Elementos Comuns (presentes em ambas as listas):</strong>
+                        </label>
+                        <textarea
+                            className="form-control bg-dark text-light border-secondary"
+                            value={outputCommon}
+                            readOnly
+                            rows={10}
+                            style={{ width: '100%', resize: 'vertical' }}
+                            placeholder="Elementos comuns aparecerão aqui..."
+                        />
+                    </div>
+                    <div className="col-md-4">
+                        <label className="form-label">
+                            <strong>Elementos da Lista 2 que NÃO estão na Lista 1:</strong>
+                        </label>
+                        <textarea
+                            className="form-control bg-dark text-light border-secondary"
+                            value={outputNotInList1}
+                            readOnly
+                            rows={10}
+                            style={{ width: '100%', resize: 'vertical' }}
+                            placeholder="Elementos exclusivos da Lista 2 aparecerão aqui..."
+                        />
+                    </div>
+                </div>
             </div>
         </>
     );
