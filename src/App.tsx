@@ -58,6 +58,9 @@ function App() {
                             <Link className="nav-link" to="/remove-duplicates">
                                 Duplicatas
                             </Link>
+                            <Link className="nav-link" to="/find-duplicate-rows">
+                                Dup Excel
+                            </Link>
                             <Link className="nav-link" to="/sort-names">
                                 Ord ↑
                             </Link>

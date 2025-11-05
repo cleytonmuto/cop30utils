@@ -56,6 +56,12 @@ function Home() {
                     <Link to="/sort-names-desc">Ordenar Nomes (Decrescente)</Link>
                 </li>
                 <li>
+                    <Link to="/sort-by-length">Ordenar por Tamanho</Link>
+                </li>
+                <li>
+                    <Link to="/find-duplicate-rows">Encontrar Linhas Duplicadas</Link>
+                </li>
+                <li>
                     <Link to="/generate-photo-zip">Gerar ZIP de Fotos</Link>
                 </li>
                 <li>
