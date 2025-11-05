@@ -64,6 +64,9 @@ function App() {
                             <Link className="nav-link" to="/sort-names-desc">
                                 Ord ↓
                             </Link>
+                            <Link className="nav-link" to="/generate-photo-zip">
+                                Foto ZIP
+                            </Link>
                             <Link className="nav-link" to="/about">
                                 Sobre
                             </Link>

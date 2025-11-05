@@ -56,6 +56,9 @@ function Home() {
                     <Link to="/sort-names-desc">Ordenar Nomes (Decrescente)</Link>
                 </li>
                 <li>
+                    <Link to="/generate-photo-zip">Gerar ZIP de Fotos</Link>
+                </li>
+                <li>
                     <Link to="/about">Sobre</Link>
                 </li>
             </ul>

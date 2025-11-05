@@ -20,6 +20,7 @@ import CompareLists from './pages/CompareLists';
 import RemoveDuplicates from './pages/RemoveDuplicates';
 import SortNames from './pages/SortNames';
 import SortNamesDesc from './pages/SortNamesDesc';
+import GeneratePhotoZip from './pages/GeneratePhotoZip';
 import About from './pages/About';
 
 const router = createBrowserRouter([
@@ -42,6 +43,7 @@ const router = createBrowserRouter([
             { path: 'remove-duplicates', element: <RemoveDuplicates /> },
             { path: 'sort-names', element: <SortNames /> },
             { path: 'sort-names-desc', element: <SortNamesDesc /> },
+            { path: 'generate-photo-zip', element: <GeneratePhotoZip /> },
             { path: 'about', element: <About /> },
         ],
     },
