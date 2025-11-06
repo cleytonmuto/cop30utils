@@ -53,8 +53,8 @@ function GeneratePhotoZip() {
 
             // Add a copy of the image for each name
             for (const name of names) {
-                // Sanitize filename - remove special characters and spaces
-                const sanitizedName = name.replace(/[^a-zA-Z0-9_-]/g, '_');
+                // Sanitize filename - remove special characters and spaces, but keep dots
+                const sanitizedName = name.replace(/[^a-zA-Z0-9_.-]/g, '_');
                 const extension = selectedOption.filename.split('.').pop() || 'jpg';
                 const filename = `${sanitizedName}.${extension}`;
                 
